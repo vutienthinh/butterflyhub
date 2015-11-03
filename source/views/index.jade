@@ -1,18 +1,15 @@
 extends layouts/layout
 
 block container
-    header
-        div.headline
-            h1 Demo Scan Barcode From Image
-    section.container#container
+    main.container#container
+        div.slogan
+            h2 Barcode Web beta
+                span Tra cứu thông tin trên trình duyệt
         div.controls
-            fieldset.input-group
-                input(type="file" capture)
-                button.addSlide Rerun
-        div#result_strip
-            ul.thumbnails
-        div#interactive.viewport
-        div#debug.detection
+                .box-panel
+                    button().btn-1 Scan barcode
+                div#interactive.viewport
+                div#debug.detection
     div(data-slick)
         div(style="background-color: yellowgreen;")
             h3 1
