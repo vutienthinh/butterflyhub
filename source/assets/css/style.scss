@@ -1,0 +1,32 @@
+// libs
+//@import "../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_variables";
+//@import "../../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/mixins";
+
+// Common
+/* @import "common/variables";
+@import "common/mixin";
+@import "common/reset";
+
+@import "common/global";
+@import "common/list";
+@import "common/text";
+@import "common/common";
+
+// Components
+@import "components/grid";
+@import "components/buttons";
+@import "components/forms";
+@import "components/navigation";
+@import "components/block";
+@import "components/accordion";
+@import "components/slider";
+
+
+// Layouts
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/pages"; */
+
+[data-slick]{
+	display: none;
+}

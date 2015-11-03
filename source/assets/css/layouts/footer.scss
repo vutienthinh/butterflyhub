@@ -1,0 +1,133 @@
+footer {
+  background-color: $light-gray-4;
+  a {
+    font-size: 0.889em;
+    color: $gray-2;
+    &:visited {
+      color: $gray-2;
+    }
+  }
+}
+.register-block {
+  .register-form {
+    padding-top: em(31);
+  }
+  .input {
+    overflow: hidden;
+  }
+  .btn-3 {
+    float: right;
+    width: 82px;
+  }
+}
+.sitemap-link {
+  .item {
+    margin-top: 7px;
+    padding-left: 20px;
+  }
+  .title-3-gray {
+    text-align: center;
+  }
+  ul {
+    padding-top: 16px;
+    text-align: center;
+  }
+  li {
+    padding-bottom: 7px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  a {
+    font-size: 22px;
+    span {
+      vertical-align: middle;
+      &:first-child {
+        position: absolute;
+        top: 0;
+        font-size: 1.389em;
+        color: $red-1;
+      }
+      + span {
+        padding-left: 40px;
+        line-height: 33px;
+        display: block;
+        width: 0;
+        overflow: hidden;
+      }
+    }
+  }
+  .social-links {
+    li {
+      width: auto;
+    }
+  }
+}
+.menu-footer {
+  padding-top: em(25);
+  border-top: 2px solid $red-1;
+  ul {
+    li {
+      display: inline-block;
+      a {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+// min-width: 992px
+@media screen and (min-width: $screen-md) {
+  footer {
+    padding: em(186) 0 em(39);
+  }
+  .register-block {
+    margin-left: -15px;
+    .btn-send {
+      margin: 0 71px 0 2px;
+    }
+  }
+  .sitemap-link {
+    .title-3-gray {
+      text-align: left;
+    }
+    .item {
+      margin-top: 7px;
+      padding-left: 20px;
+    }
+    ul {
+      text-align: left;
+    }
+    li {
+      width: auto;
+    }
+    a {
+      font-size: 22px;
+      span {
+        + span {
+          width: auto;
+        }
+      }
+    }
+  }
+  .menu-footer {
+    margin-top: em(120);
+    ul {
+      li {
+        padding-right: em(30);
+      }
+    }
+  }
+}
+
+// max-width: 991px
+@media screen and (max-width: $screen-sm-max) {
+  .menu-footer {
+    ul {
+      text-align: center;
+      li {
+        padding: 0 em(15);
+      }
+    }
+  }
+}
