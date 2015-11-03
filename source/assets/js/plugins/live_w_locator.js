@@ -2,7 +2,7 @@ $(function() {
     var resultCollector = Quagga.ResultCollector.create({
         capture: true,
         capacity: 20,
-        blacklist: [{code: "2167361334", format: "i2of5"}],
+        blacklist: [{code: '2167361334', format: 'i2of5'}],
         filter: function(codeResult) {
             // only store results which match this constraint
             // e.g.: codeResult
@@ -28,39 +28,39 @@ $(function() {
         attachListeners: function() {
             var self = this;
 
-            $(".controls").on("click", "button.stop", function(e) {
+            $('.controls').on('click', 'button.stop', function(e) {
                 e.preventDefault();
                 Quagga.stop();
                 self._printCollectedResults();
             });
 
-            $(".controls .reader-config-group").on("change", "input, select", function(e) {
+            $('.controls .reader-config-group').on('change', 'input, select', function(e) {
                 e.preventDefault();
                 var $target = $(e.target),
-                    value = $target.attr("type") === "checkbox" ? $target.prop("checked") : $target.val(),
-                    name = $target.attr("name"),
+                    value = $target.attr('type') === 'checkbox' ? $target.prop('checked') : $target.val(),
+                    name = $target.attr('name'),
                     state = self._convertNameToState(name);
 
-                console.log("Value of "+ state + " changed to " + value);
+                console.log('Value of '+ state + ' changed to ' + value);
                 self.setState(state, value);
             });
         },
         _printCollectedResults: function() {
             var results = resultCollector.getResults(),
-                $ul = $("#result_strip ul.collector");
+                $ul = $('#result_strip ul.collector');
 
             results.forEach(function(result) {
                 var $li = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
 
-                $li.find("img").attr("src", result.frame);
-                $li.find("h4.code").html(result.codeResult.code + " (" + result.codeResult.format + ")");
+                $li.find('img').attr('src', result.frame);
+                $li.find('h4.code').html(result.codeResult.code + ' (' + result.codeResult.format + ')');
                 $ul.prepend($li);
             });
         },
         _accessByPath: function(obj, path, val) {
             var parts = path.split('.'),
                 depth = parts.length,
-                setter = (typeof val !== "undefined") ? true : false;
+                setter = (typeof val !== 'undefined') ? true : false;
 
             return parts.reduce(function(o, key, i) {
                 if (setter && (i + 1) === depth) {
@@ -70,18 +70,18 @@ $(function() {
             }, obj);
         },
         _convertNameToState: function(name) {
-            return name.replace("_", ".").split("-").reduce(function(result, value) {
+            return name.replace('_', '.').split('-').reduce(function(result, value) {
                 return result + value.charAt(0).toUpperCase() + value.substring(1);
             });
         },
         detachListeners: function() {
-            $(".controls").off("click", "button.stop");
-            $(".controls .reader-config-group").off("change", "input, select");
+            $('.controls').off('click', 'button.stop');
+            $('.controls .reader-config-group').off('change', 'input, select');
         },
         setState: function(path, value) {
             var self = this;
 
-            if (typeof self._accessByPath(self.inputMapper, path) === "function") {
+            if (typeof self._accessByPath(self.inputMapper, path) === 'function') {
                 value = self._accessByPath(self.inputMapper, path)(value);
             }
 
@@ -99,7 +99,7 @@ $(function() {
                     return {
                         width: parseInt(values[0]),
                         height: parseInt(values[1]),
-                        facing: "environment"
+                        facing: 'environment'
                     }
                 }
             },
@@ -108,26 +108,26 @@ $(function() {
             },
             decoder: {
                 readers: function(value) {
-                    return [value + "_reader"];
+                    return [value + '_reader'];
                 }
             }
         },
         state: {
             inputStream: {
-                type : "LiveStream",
+                type : 'LiveStream',
                 constraints: {
                     width: 640,
                     height: 480,
-                    facing: "environment" // or user
+                    facing: 'environment' // or user
                 }
             },
             locator: {
-                patchSize: "medium",
+                patchSize: 'medium',
                 halfSample: true
             },
             numOfWorkers: 4,
             decoder: {
-                readers : [ "code_128_reader"]
+                readers : [ 'code_128_reader']
             },
             locate: true
         },
@@ -142,16 +142,16 @@ $(function() {
 
         if (result) {
             if (result.boxes) {
-                drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute('width')), parseInt(drawingCanvas.getAttribute('height')));
                 result.boxes.filter(function (box) {
                     return box !== result.box;
                 }).forEach(function (box) {
-                    Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
+                    Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: 'green', lineWidth: 2});
                 });
             }
 
             if (result.box) {
-                Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
+                Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: '#00F', lineWidth: 2});
             }
 
             if (result.codeResult && result.codeResult.code) {
@@ -160,6 +160,22 @@ $(function() {
         }
     });
 
+   /* $.ajax({
+        url: 'http://localhost:8088/items',
+        type: 'GET',
+        data: '',
+        success: function(respone){
+            console.log(respone);
+        }
+    });*/
+    $.ajax({
+        url: 'http://localhost:8088/getItemById',
+        type: 'POST',
+        data: 'id=dasdsad',
+        success: function(respone){
+            console.log(respone);
+        }
+    });
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
 
@@ -170,12 +186,12 @@ $(function() {
 
             });
             $node = $('<div><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></div>');
-            $node.find("img").attr("src", canvas.toDataURL());
-            $node.find("h4.code").html(code);
+            $node.find('img').attr('src', canvas.toDataURL());
+            $node.find('h4.code').html(code);
             $('[data-slick]').fadeIn( 600, function() {
                 $(this).slick('slickAdd',$node);
             });
-            //$("#result_strip ul.thumbnails").prepend($node);
+            //$('#result_strip ul.thumbnails').prepend($node);
         }
     });
 

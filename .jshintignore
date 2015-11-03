@@ -1,0 +1,5 @@
+test/fixtures/dontlint.txt
+node_modules/**
+source/assets/js/plugins/script.js
+source/assets/js/plugins/live_w_locator.js
+
