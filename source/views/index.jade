@@ -1,26 +1,50 @@
 extends layouts/layout
 
 block container
-    main.container#container
-        div.slogan
-            h2 Barcode Web beta
-                span Tra cứu thông tin trên trình duyệt
-        div.controls
-                .box-panel
-                    button().btn-1 Scan barcode
-                div#interactive.viewport
-                div#debug.detection
-    div(data-slick)
-        div(style="background-color: yellowgreen;")
-            h3 1
-        div(style="background-color: yellowgreen;")
-            h3 2
-        div(style="background-color: yellowgreen;")
-            h3 3
-        div(style="background-color: yellowgreen;")
-            h3 4
-        div(style="background-color: yellowgreen;")
-            h3 5
-        div(style="background-color: yellowgreen;")
-            h3 6
+    main
+        .container
+            .row
+                .col-sm-4.col-sm-offset-4
+                    div.slogan
+                        h2 Barcode Web beta
+                            span Tra cứu thông tin trên trình duyệt
+                    div.controls
+                            .box-panel
+                                button().btn-1 Scan barcode
+                            div#interactive.viewport
+                            div#debug.detection
+            .row
+                .col-sm-12
+                    div(data-slick)
+                        .row
+                            .col-sm-4
+                                img(src="media/product-1.jpg", alt="product 1").img-responsive
+                            .col-sm-8
+                                h2.color-red MAURIS DIGNISSIM NUNC DIAM EGET FAUCIBUS PURUS
+                                .desc tate leo eleifend ultricies nec eget purus. Sed iaculis placerat purus Vivalectus lectus, fringilla vel fringilla vitae, Cras massa ante, posuere sed lacinia iaculis ut enim. Nullam retium placerat nunc Fusce felis nunc, lacinia ut tempor ut, convallis a tortor. Quisque eget sapien orci
+                                .price 25.00$
+                                ul.social.list-inline
+                                    li
+                                        a.fa.fa-twitter
+                                    li
+                                        a.fa.fa-google-plus
+                                    li
+                                        a.fa.fa-facebook
+                                    li
+                                        a.fa.fa-skype
+                        .row
+                            .col-sm-4
+                                img(src="media/product-2.jpg", alt="product 1").img-responsive
+                            .col-sm-8
+                                h2.color-red MAURIS DIGNISSIM NUNC DIAM EGET VITAE FAUCIBUS PURUS SAGITTIS TORTOR
+                                .price 25.00$
+                                ul.social.list-inline
+                                    li
+                                        a.fa.fa-twitter
+                                    li
+                                        a.fa.fa-google-plus
+                                    li
+                                        a.fa.fa-facebook
+                                    li
+                                        a.fa.fa-skype
 

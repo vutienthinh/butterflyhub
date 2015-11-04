@@ -29,9 +29,16 @@
 
 
 @import "common/reset";
+@import "bootstrap";
+@import "fontface";
+
 
 [data-slick]{
 	display: none;
+}
+[data-slick] > div{
+  background-color: #fff;
+  border-radius: 10px;
 }
 body {
   font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -43,7 +50,7 @@ body {
     height: 100%;
   }
 }
-main.container {
+main {
   background: linear-gradient(to bottom, rgba(139,195,62,1) 0%, rgba(127,175,58,1) 100%);
   overflow: hidden;
 }
@@ -108,4 +115,38 @@ main.container {
 }
 button:hover {
   background-color: #789e3f;
+}
+.color-red {
+  color: #e92d2d;
+}
+.desc {
+  margin: 10px 0 20px 0;
+}
+.price {
+  font-size: 30px;
+  font-weight: bold;
+}
+.social {
+  margin-top: 10px;
+  font-size: 26px;
+  li {
+    margin-right: 10px;
+    a {
+      color: #3F5AA6;
+    }
+  }
+}
+.slick-prev:before, .slick-next:before {
+  font-size: 30px !important;
+}
+.slick-prev, .slick-next {
+  width: 30px !important;
+  height: 30px !important;
+}
+.slick-prev {
+  left: -35px !important;
+}
+
+.slick-next {
+  right: -35px !important;
 }
