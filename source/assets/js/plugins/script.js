@@ -7,7 +7,7 @@ $( document ).ready(function() {
         asNavFor: '.slick-nav'
     });
     $('.slick-nav').slick({
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         asNavFor: '.slick-for',
         dots: true,
@@ -16,7 +16,7 @@ $( document ).ready(function() {
     });
     $('.addSlide').off('click.addSlide').on('click.addSlide', function(){
         $('[data-slick]').slick('slickAdd','<div style="background-color: black;">7</div>');
-        
+
     });
     // $('#container').highcharts({
 
@@ -70,7 +70,7 @@ $( document ).ready(function() {
     //     plotOptions: {
     //         series: {
     //             marker: {
-    //                     enabled: false    
+    //                     enabled: false
     //                     }
     //                 },
     //             fillOpacity: 0.2
@@ -89,7 +89,7 @@ $( document ).ready(function() {
     //         enabled: false
     //     },
     //     exporting: {
-    //         enabled: false 
+    //         enabled: false
     //     },
     //     series: [{
     //         type: 'area',
