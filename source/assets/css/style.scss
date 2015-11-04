@@ -81,10 +81,9 @@ main {
   }
 }
 .box-panel {
-  display: none;
   position: relative;
   text-align: center;
-  //display: table-cell;
+  display: table-cell;
   vertical-align: middle;
   button {
     position: relative;
