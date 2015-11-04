@@ -1,9 +1,18 @@
 $( document ).ready(function() {
 
-    $('[data-slick]').slick({
+    $('.slick-for').slick({
         slidesToShow : 1,
         slidesToScroll : 1,
-        dots: true
+        arrows: false,
+        asNavFor: '.slick-nav'
+    });
+    $('.slick-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slick-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
     });
     $('.addSlide').off('click.addSlide').on('click.addSlide', function(){
         $('[data-slick]').slick('slickAdd','<div style="background-color: black;">7</div>');
