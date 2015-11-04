@@ -168,31 +168,33 @@ $(function() {
             console.log(respone);
         }
     });*/
-    $.ajax({
-        url: 'http://localhost:8088/getItemById',
-        type: 'POST',
-        data: 'id=dasdsad',
-        success: function(respone){
-            console.log(respone);
-        }
-    });
+    // $.ajax({
+    //     url: 'http://localhost:8088/getItemById',
+    //     type: 'POST',
+    //     data: 'id=dasdsad',
+    //     success: function(respone){
+    //         console.log(respone);
+    //     }
+    // });
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
 
         if (App.lastResult !== code) {
             App.lastResult = code;
             var $node = null, canvas = Quagga.canvas.dom.image;
-            $('#interactive').fadeOut( 600, function() {
+            $('#interactive').parents('.row').fadeOut( 600, function() {
 
             });
-            $node = $('<div><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></div>');
-            $node.find('img').attr('src', canvas.toDataURL());
-            $node.find('h4.code').html(code);
+            // $node = $('<div><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></div>');
+            // $node.find('img').attr('src', canvas.toDataURL());
+            // $node.find('h4.code').html(code);
             $('[data-slick]').fadeIn( 600, function() {
-                $(this).slick('slickAdd',$node);
+                //$(this).slick('slickAdd',$node);
             });
             //$('#result_strip ul.thumbnails').prepend($node);
         }
     });
-
+    $('.scan-btn').off('click.Scan').on('click.Scan', function(){
+        $(this).parents('.box-panel').fadeOut(600);
+    });
 });
