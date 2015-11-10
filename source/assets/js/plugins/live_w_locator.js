@@ -135,7 +135,7 @@ $(function() {
         lastResult : null
     };
 
-    App.init();
+    //App.init();
 
     Quagga.onProcessed(function(result) {
         var drawingCtx = Quagga.canvas.ctx.overlay,
@@ -161,6 +161,14 @@ $(function() {
         }
     });
 
+    /*$.ajax({
+        url: 'http://localhost:1337/product/find?name=Loreal%20Lalo',
+        type: 'GET',
+        data: '',
+        success: function(respone){
+            console.log(respone);
+        }
+    });*/
    /* $.ajax({
         url: 'http://localhost:8088/items',
         type: 'GET',
