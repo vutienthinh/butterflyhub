@@ -206,4 +206,23 @@ $(function() {
     $('.scan-btn').off('click.Scan').on('click.Scan', function(){
         $(this).parents('.box-panel').fadeOut(600);
     });
+    $('#page-product').css({
+            top: 0,
+            left: $(window).width(),
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            'background-color': 'green'
+    });
+    $('body').css('overflow-x', 'hidden');
+    $('.item').off('click.Showdetail').on('click.Showdetail', function(){
+        //$('#page-product').show().width(0);
+        /*$('#page-home').animate({ width: 'toggle' }, 'easing', function(){
+            $('#page-product').animate({ width: 'toggle' }, 'easing', function(){
+            });
+        });*/
+
+        $('#page-home').addClass('slideOutLeft animated');
+        $('#page-product').css('left','0px').addClass('slideInRight animated');
+    });
 });
