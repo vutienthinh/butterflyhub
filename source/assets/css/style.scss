@@ -194,12 +194,12 @@ button:hover {
   }
 }
 .product-detail {
-  display: none;
+  margin: 0 auto;
   width: 500px;
-  // position: absolute;
-  // top: 0;
-  // left: 600px;
   background-color: #fff;
   border-radius: 10px;
   padding: 10px;
+}
+#page-product {
+  display: none;
 }
