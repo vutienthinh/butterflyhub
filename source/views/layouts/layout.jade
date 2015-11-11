@@ -17,10 +17,11 @@ html(class="no-js", lang="en")
 
     script(src="js/modernizr.js")
   body
-    include ../blocks/header
-    block container
-    //- include ../blocks/footer
-    //- block layer
+    div#page-home
+        include ../blocks/header
+        block container
+    div#page-product
+        include ../blocks/product
     include ../blocks/script
 
     noscript JavaScript is off. Please enable to view full site.

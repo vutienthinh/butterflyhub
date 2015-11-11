@@ -57,6 +57,7 @@ body {
 main {
   background: linear-gradient(to bottom, rgba(139,195,62,1) 0%, rgba(127,175,58,1) 100%);
   overflow: hidden;
+  min-height: 100%;
 }
 .controls {
   position: relative;
@@ -195,9 +196,9 @@ button:hover {
 .product-detail {
   display: none;
   width: 500px;
-  position: absolute;
-  top: 0;
-  left: 600px;
+  // position: absolute;
+  // top: 0;
+  // left: 600px;
   background-color: #fff;
   border-radius: 10px;
   padding: 10px;
