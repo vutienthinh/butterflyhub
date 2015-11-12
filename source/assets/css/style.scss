@@ -45,6 +45,10 @@
 .slick-for {
   background-color: #fff;
 }
+.slick-slider {
+  margin-left: -20px;
+  margin-right: -20px;
+}
 body {
   font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
@@ -154,11 +158,11 @@ button:hover {
   z-index: 9999;
 }
 .slick-prev {
-  left: -35px !important;
+  left: 32px !important;
 }
 
 .slick-next {
-  right: -35px !important;
+  right: 32px !important;
 }
 .slick-slide img {
   margin: 0 auto;
