@@ -8,7 +8,7 @@ $( document ).ready(function() {
     });
     $('.slick-nav').slick({
         slidesToShow: 5,
-        slidesToScroll: 1,
+        slidesToScroll: 0,
         asNavFor: '.slick-for',
         dots: true,
         centerMode: true,
