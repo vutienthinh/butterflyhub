@@ -222,7 +222,11 @@ $(function() {
             });
         });*/
 
-        $('#page-home').addClass('slideOutLeft animated');
-        $('#page-product').css('left','0px').addClass('slideInRight animated');
+        $('#page-home').removeClass().addClass('slideOutLeft animated');
+        $('#page-product').css('left','0px').removeClass().addClass('slideInRight animated');
+    });
+    $('.back-btn').off('click.back').on('click.back', function(){
+        $('#page-product').removeClass().addClass('slideOutRight animated');
+        $('#page-home').removeClass().addClass('slideInLeft animated');
     });
 });
